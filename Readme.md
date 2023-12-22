@@ -31,7 +31,7 @@ Here’s a top level flow of what happens to a card
 
 1. Clone the project
 
-` git clone https://github.com/gauravshinde1816/Fampay-Assignment-Nodejs.git`
+` git clone https://github.com/gauravshinde1816/card_tracker.git`
 
 2. Start backend
    - ` cd card_tracker/`
