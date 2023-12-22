@@ -1,5 +1,61 @@
 # Card Status Fetch App using Gin (Golang Framework and MongoDB (Atlas))
 
+- This small project is developed using Gin (Golang Framework) and  MongoDB Atlas as NoSQL database.
+
+### Some advantages of using Golang framework.
+- The primary reason is I am working in node.js and  Golang for a while , and I have experience of migrating spring boot , node.js backend project to Golang framework and acheive better experience in terms of speed ,  build size and build process.
+
+- Golang is compiled into machine code, which means that it runs much faster than interpreted languages like Node.js
+
+
+### Approach : 
+
+- The Goal of the project is to provide status of the card based on the combined data present in the CSV file.
+- The connection is established with MongoDB atlas database. 
+- Application will start with loading all the data from csv into the database (MongoDB atlas).
+- It will parse the csv files and creating the collection of card in the mongoDB.
+- Then endpoint exposed to query the status of the card based on user_id or card_id.
+- One additional thing could be done is to schedule the *Cron Job* to get the data from the data folder
+  and load into database so that it will fetch the latest status of the card.
+
+- The End point ```get_card_status``` will fetch following four  types of status with timestamps 
+  - DELIVERED : card delivered with timestamp
+  - PICKED_UP : card picked up with timestamp
+  - EXCEPTION : card exception with timestamp and comment
+  - RETURNED  : card returned due to exception
+
+
+- Following the sample response of the endpoint hit with card_id = "ZYW8890"
+
+```JSON
+{
+    "card status": [
+        {
+            "card_id": "ZYW8890",
+            "user_id": "0534534534",
+            "status": "EXCEPTION",
+            "comment": "User not available",
+            "timestamp": "2023-12-22T04:18:41.492Z"
+        },
+        {
+            "card_id": "ZYW8890",
+            "user_id": "534534534",
+            "status": "PICKED_UP",
+            "comment": "",
+            "timestamp": "2023-12-22T04:18:42.412Z"
+        },
+        {
+            "card_id": "ZYW8890",
+            "user_id": "971534534534",
+            "status": "RETURNED",
+            "comment": "",
+            "timestamp": "2023-12-22T04:18:43.346Z"
+        }
+    ]
+}
+
+
+```
 ### 🧿 Project Goal
 <!-- Problem Statement -->
 
