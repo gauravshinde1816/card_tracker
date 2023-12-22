@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  backend:
+    image: gauravshinde1816/card_tracker_backend:1.0.0
+    ports:
+      - '8080:8080'

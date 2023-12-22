@@ -79,7 +79,6 @@ Here’s a top level flow of what happens to a card
 - If the Card could not be delivered, re-delivery is attempted maximum of two times
 - If all attempts of delivery fail, it is returned to us
 
-
 </details>
 
 
